@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Cyber+ Training</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/stylesheet.css" />
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var elements = Array.prototype.slice.call(document.querySelectorAll('.reveal, .reveal-stagger'));
+        function onScroll() {
+          var vh = window.innerHeight || document.documentElement.clientHeight;
+          elements.forEach(function (el) {
+            var rect = el.getBoundingClientRect();
+            var fullyAbove = rect.bottom < -40;
+            var visible = rect.top <= vh * 0.85 && rect.bottom >= vh * 0.05;
+            if (visible) {
+              el.classList.add('in-view');
+              el.classList.remove('passed');
+            } else if (fullyAbove) {
+              el.classList.remove('in-view');
+              el.classList.add('passed');
+            } else {
+              el.classList.remove('in-view');
+              el.classList.remove('passed');
+            }
+          });
+        }
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+      });
+    </script>
+  </head>
+  <body id="top">
+    <header class="site-header glow">
+      <div class="brand">
+        <img src="images/Cyber+logo_transparent.png" alt="Cyber+ logo" class="brand-mark" />
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html" aria-current="page">About</a>
+        <a href="training.html">Training</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section hero reveal graphic" aria-label="About">
+        <div class="content">
+          <h1>About Cyber+ Training</h1>
+          <p class="lead">
+            We are a specialized cybersecurity training studio that transforms academic concepts into
+            real-world defense skills for students, professionals, and corporate security champions.
+          </p>
+          <a class="button" href="training.html">View the courses</a>
+        </div>
+      </section>
+
+      <section class="section reveal" aria-label="Curriculum overview">
+        <div class="content">
+          <div class="about-hero reveal-stagger in-view">
+            <div class="about-hero-text">
+              <h2>Mission &amp; people</h2>
+              <p class="lead">
+                Cyber+ instructors have led SOC teams, purple-team exercises, and enterprise readiness
+                programs. We compress those experiences into short cohorts backed by dedicated mentors.
+              </p>
+              <div class="about-cta">
+                <a class="button" href="services.html">See enterprise options</a>
+                <a class="link" href="contact.html">Talk to an advisor</a>
+              </div>
+              <div class="about-stats">
+                <div class="stat">
+                  <span class="num">12</span>
+                  <span class="label">Hands-on labs</span>
+                </div>
+                <div class="stat">
+                  <span class="num">25+</span>
+                  <span class="label">Client teams</span>
+                </div>
+                <div class="stat">
+                  <span class="num">98%</span>
+                  <span class="label">Confidence gain</span>
+                </div>
+              </div>
+            </div>
+            <div class="about-hero-visual" aria-hidden="true">
+              <div class="card preview">
+                <div class="preview-nav">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="preview-body">
+                  <div class="bar bar1"></div>
+                  <div class="bar bar2"></div>
+                  <div class="bar bar3"></div>
+                  <div class="grid-squares">
+                    <i></i><i></i><i></i><i></i><i></i><i></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-body reveal-stagger">
+            <div class="about-col">
+              <h3>What you’ll learn</h3>
+              <ul class="tick-list">
+                <li>Assess risk, compliance, and threat landscapes</li>
+                <li>Harden networks, endpoints, and cloud workloads</li>
+                <li>Detect intrusions with SIEM, EDR, and log pipelines</li>
+                <li>Coordinate incident response with executive reporting</li>
+              </ul>
+            </div>
+            <div class="about-col">
+              <h3>How we help</h3>
+              <p class="muted">
+                Each cohort blends short briefings with guided labs in virtual environments. Teams can
+                bring in-house policies to tailor tabletop drills and post-lab action plans.
+              </p>
+              <div class="timeline">
+                <div class="t-row">
+                  <div class="dot"></div>
+                  <div class="t-content">
+                    <strong>Week 1</strong> — Foundations &amp; Threat Training
+                  </div>
+                </div>
+                <div class="t-row">
+                  <div class="dot"></div>
+                  <div class="t-content">
+                    <strong>Week 2</strong> — Network Training
+                  </div>
+                </div>
+                <div class="t-row">
+                  <div class="dot"></div>
+                  <div class="t-content">
+                    <strong>Week 3</strong> — Offensive Testing &amp; Detection
+                  </div>
+                </div>
+                <div class="t-row">
+                  <div class="dot"></div>
+                  <div class="t-content">
+                    <strong>Week 4</strong> — Incident Response &amp; Reporting
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="culture-grid">
+            <figure class="culture-card">
+              <img src="images/Lecturer-teaching-students.jpg" alt="Cyber+ mentors reviewing dashboards with students" />
+              <figcaption>Mentors review real dashboards to coach students on clarity and accuracy.</figcaption>
+            </figure>
+            <figure class="culture-card">
+              <img src="images/Workshop-image.jpg" alt="Cyber+ virtual SOC environment preview" />
+              <figcaption>Virtual SOC ranges mimic hybrid networks so you can test defenses safely.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="content">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="brand">Cyber+</div>
+            <p class="muted">
+              Practical cybersecurity training for students, professionals, and organizations that need resilient defenses.
+            </p>
+          </div>
+          <div class="footer-links" aria-label="Footer navigation">
+            <a href="training.html">Courses</a>
+            <a href="#top">Back to top</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <small>© <span id="year"></span> Cyber+ Training · All rights reserved</small>
+          <small>Built for the College Web Authoring assignment</small>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
+

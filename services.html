@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cyber+ Services &amp; Packages</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/stylesheet.css" />
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var elements = Array.prototype.slice.call(document.querySelectorAll('.reveal, .reveal-stagger'));
+        function onScroll() {
+          var vh = window.innerHeight || document.documentElement.clientHeight;
+          elements.forEach(function (el) {
+            var rect = el.getBoundingClientRect();
+            var fullyAbove = rect.bottom < -40;
+            var visible = rect.top <= vh * 0.85 && rect.bottom >= vh * 0.05;
+            if (visible) {
+              el.classList.add('in-view');
+              el.classList.remove('passed');
+            } else if (fullyAbove) {
+              el.classList.remove('in-view');
+              el.classList.add('passed');
+            } else {
+              el.classList.remove('in-view');
+              el.classList.remove('passed');
+            }
+          });
+        }
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+      });
+    </script>
+  </head>
+  <body id="top">
+    <header class="site-header glow">
+      <div class="brand">
+        <img src="images/Cyber+logo_transparent.png" alt="Cyber+ logo" class="brand-mark" />
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="training.html">Training</a>
+        <a href="services.html" aria-current="page">Services</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section hero reveal graphic" aria-label="Enterprise services">
+        <div class="content">
+          <h1>Enterprise Workshops &amp; Advisory</h1>
+          <p>
+            Cyber+ partners with colleges and businesses to deliver private workshops, tabletop drills, and
+            readiness assessments tailored to your policies and risk profile.
+          </p>
+          <a class="button" href="contact.html">Request a proposal</a>
+        </div>
+      </section>
+
+      <section class="section reveal" aria-label="Packages">
+        <div class="content">
+          <h2>Service packages</h2>
+          <p class="muted">Pick a starting point and customize the agenda, length, and deliverables.</p>
+          <div class="summary-grid">
+            <article class="summary-card">
+              <h3>Starter</h3>
+              <p>Great for small groups and societies looking for focused skills refreshers.</p>
+              <ul class="tick-list">
+                <li>One 4-hour workshop</li>
+                <li>Shared lab environment</li>
+                <li>Template incident report</li>
+              </ul>
+            </article>
+            <article class="summary-card">
+              <h3>Professional</h3>
+              <p>Ideal for SOC teams preparing for audits or new tooling deployments.</p>
+              <ul class="tick-list">
+                <li>Two-day live-fire lab</li>
+                <li>Executive tabletop drill</li>
+                <li>Customized playbook critique</li>
+              </ul>
+            </article>
+            <article class="summary-card">
+              <h3>Enterprise</h3>
+              <p>Full program for distributed organizations that need ongoing assessment.</p>
+              <ul class="tick-list">
+                <li>Monthly purple-team exercise</li>
+                <li>Leadership coaching block</li>
+                <li>Detailed readiness report</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt reveal" aria-label="Options table">
+        <div class="content">
+          <h2>Compare deliverables</h2>
+          <div class="services-table-wrapper">
+            <table class="services-table">
+              <thead>
+                <tr>
+                  <th>Deliverable</th>
+                  <th>Starter</th>
+                  <th>Professional</th>
+                  <th>Enterprise</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Guided labs</td>
+                  <td>1 day</td>
+                  <td>2 days</td>
+                  <td>4 days</td>
+                </tr>
+                <tr>
+                  <td>Tabletop scenarios</td>
+                  <td>Included</td>
+                  <td>Advanced</td>
+                  <td>Custom + executive panels</td>
+                </tr>
+                <tr>
+                  <td>Reporting pack</td>
+                  <td>Checklist</td>
+                  <td>Action plan</td>
+                  <td>Full readiness dossier</td>
+                </tr>
+                <tr>
+                  <td>Follow-up coaching</td>
+                  <td>-</td>
+                  <td>2 sessions</td>
+                  <td>Quarterly retainer</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal deep-graphic" aria-label="Resources">
+        <div class="content">
+          <h2>Resource library</h2>
+          <p class="muted">Downloadable guides to help you prep for Cyber+ engagements.</p>
+          <div class="resource-grid">
+            <article class="resource-card">
+              <h3>Incident Response Checklist</h3>
+              <p>Step-by-step plan we use during tabletop drills.</p>
+              <a class="button" href="contact.html">Request this file</a>
+            </article>
+            <article class="resource-card">
+              <h3>Reporting Template</h3>
+              <p>Executive-ready slide deck outline with metrics and next steps.</p>
+              <a class="button" href="contact.html">Request this file</a>
+            </article>
+            <article class="resource-card">
+              <h3>Security Culture Brief</h3>
+              <p>Talking points and activities for engaging non-technical teams.</p>
+              <a class="button" href="contact.html">Request this file</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" aria-label="Next steps">
+        <div class="content">
+          <h2>How to book</h2>
+          <ol class="tick-list">
+            <li>Share your goals, preferred dates, and audience via the contact page.</li>
+            <li>We schedule a short discovery call to outline labs, briefings, and reporting needs.</li>
+            <li>Cyber+ produces a final statement of work with timelines and onboarding requirements.</li>
+          </ol>
+          <div class="cta-row">
+            <a class="button" href="contact.html">Start the conversation</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="content">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="brand">Cyber+</div>
+            <p class="muted">
+              Practical cybersecurity training for students, professionals, and organizations that need resilient defenses.
+            </p>
+          </div>
+          <div class="footer-links" aria-label="Footer navigation">
+            <a href="training.html">Courses</a>
+            <a href="#top">Back to top</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <small>© <span id="year"></span> Cyber+ Training · All rights reserved</small>
+          <small>Built for the College Web Authoring assignment</small>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
+

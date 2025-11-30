@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Cyber+ Training</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/stylesheet.css" />
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var elements = Array.prototype.slice.call(document.querySelectorAll('.reveal, .reveal-stagger'));
+        function onScroll() {
+          var vh = window.innerHeight || document.documentElement.clientHeight;
+          elements.forEach(function (el) {
+            var rect = el.getBoundingClientRect();
+            var fullyAbove = rect.bottom < -40;
+            var visible = rect.top <= vh * 0.85 && rect.bottom >= vh * 0.05;
+            if (visible) {
+              el.classList.add('in-view');
+              el.classList.remove('passed');
+            } else if (fullyAbove) {
+              el.classList.remove('in-view');
+              el.classList.add('passed');
+            } else {
+              el.classList.remove('in-view');
+              el.classList.remove('passed');
+            }
+          });
+        }
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+      });
+    </script>
+  </head>
+  <body id="top">
+    <header class="site-header glow">
+      <div class="brand">
+        <img src="images/Cyber+logo_transparent.png" alt="Cyber+ logo" class="brand-mark" />
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="training.html">Training</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section hero reveal graphic" aria-label="Contact">
+        <div class="content">
+          <h1>Contact Cyber+</h1>
+          <p class="muted">Ready to enroll or plan a private workshop? Send us the details.</p>
+        </div>
+      </section>
+
+      <section class="section reveal" aria-label="Contact form">
+        <div class="content">
+          <div class="contact-wrap reveal-stagger in-view">
+            <div class="contact-info">
+              <h2>Contact details</h2>
+              <div class="info-cards">
+                <div class="info-card">
+                  <div class="dot"></div>
+                  <div>
+                    <strong>Email</strong>
+                    <div class="muted">hello@cyberplus.training</div>
+                  </div>
+                </div>
+                <div class="info-card">
+                  <div class="dot"></div>
+                  <div>
+                    <strong>Location</strong>
+                    <div class="muted">Cyber+ Lab · Waterford, Ireland</div>
+                  </div>
+                </div>
+                <div class="info-card">
+                  <div class="dot"></div>
+                  <div>
+                    <strong>Office Hours</strong>
+                    <div class="muted">Mon–Fri · 10:00–16:00</div>
+                  </div>
+                </div>
+              </div>
+              <ul class="contact-notes">
+                <li>Responses typically within 1–2 business days</li>
+                <li>Include your preferred delivery format (in-person, remote, hybrid)</li>
+              </ul>
+            </div>
+
+            <form class="contact-form pro" action="#" method="post">
+              <div class="form-head">
+                <h3>Request a training plan</h3>
+                <p class="muted">All fields marked with * are required.</p>
+              </div>
+
+              <div class="grid">
+                <label>
+                  <span class="label-text">Full name *</span>
+                  <input type="text" name="name" placeholder="Alex Taylor" required />
+                  <span class="hint">Include credentials if relevant (e.g., CISSP)</span>
+                </label>
+                <label>
+                  <span class="label-text">Email *</span>
+                  <input type="email" name="email" placeholder="you@company.com" required />
+                  <span class="hint">We’ll only use this to reply</span>
+                </label>
+              </div>
+
+              <label>
+                <span class="label-text">Subject *</span>
+                <input type="text" name="subject" placeholder="SME team readiness workshop" required />
+              </label>
+
+              <label>
+                <span class="label-text">Message *</span>
+                <textarea name="message" rows="6" placeholder="Tell us about your goals, timeline, and audience..." required></textarea>
+              </label>
+
+              <label class="check">
+                <input type="checkbox" name="consent" required />
+                <span>I agree to be contacted about my enquiry *</span>
+              </label>
+
+              <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp" />
+
+              <div class="form-actions">
+                <button type="submit" class="button">Send message</button>
+                <a href="#top" class="link">Back to top</a>
+              </div>
+
+              <div class="alert success" role="status" aria-live="polite" hidden>
+                Thanks! Your message was sent. We’ll get back to you soon.
+              </div>
+              <div class="alert error" role="alert" aria-live="assertive" hidden>
+                Please check the required fields and try again.
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="content">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="brand">Cyber+</div>
+            <p class="muted">
+              Practical cybersecurity training for students, professionals, and organizations that need resilient defenses.
+            </p>
+          </div>
+          <div class="footer-links" aria-label="Footer navigation">
+            <a href="training.html">Courses</a>
+            <a href="#top">Back to top</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <small>© <span id="year"></span> Cyber+ Training · All rights reserved</small>
+          <small>Built for the College Web Authoring assignment</small>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
+

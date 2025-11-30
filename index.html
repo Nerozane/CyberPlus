@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cyber+ Training</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/stylesheet.css" />
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var elements = Array.prototype.slice.call(document.querySelectorAll('.reveal, .reveal-stagger'));
+        function onScroll() {
+          var vh = window.innerHeight || document.documentElement.clientHeight;
+          for (var i = 0; i < elements.length; i++) {
+            var el = elements[i];
+            var rect = el.getBoundingClientRect();
+            var fullyAbove = rect.bottom < -40;
+            var visible = rect.top <= vh * 0.85 && rect.bottom >= vh * 0.05;
+
+            if (visible) {
+              el.classList.add('in-view');
+              el.classList.remove('passed');
+            } else if (fullyAbove) {
+              el.classList.remove('in-view');
+              el.classList.add('passed');
+            } else {
+              el.classList.remove('in-view');
+              el.classList.remove('passed');
+            }
+          }
+        }
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+      });
+    </script>
+  </head>
+  <body id="top">
+    <header class="site-header glow">
+      <div class="brand">
+        <img src="images/Cyber+logo_transparent.png" alt="Cyber+ logo" class="brand-mark" />
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="about.html">About</a>
+        <a href="training.html">Training</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="section hero reveal" aria-label="Home">
+        <div class="content">
+          <h1>Cybersecurity Training That Works</h1>
+          <p>
+            Cyber+ delivers practical cyber defense education for individuals, teams, and whole
+            organizations that need to outpace modern threats.
+          </p>
+          <a class="button" href="about.html">Explore the mission</a>
+        </div>
+      </section>
+
+      <section class="section reveal" aria-label="Highlights">
+        <div class="content">
+          <p class="eyebrow">Choose your path</p>
+          <h2>One platform for every security learner</h2>
+          <div class="summary-grid">
+            <article class="summary-card">
+              <h3>Individuals &amp; students</h3>
+              <p>Build modern, job-ready cyber skills with expert mentors and guided lab time.</p>
+              <a class="link" href="about.html">Meet the mentors</a>
+            </article>
+            <article class="summary-card">
+              <h3>Security teams</h3>
+              <p>Follow our four-week tracks covering foundations, defense, detection, and response.</p>
+              <a class="link" href="training.html">See the curriculum</a>
+            </article>
+            <article class="summary-card">
+              <h3>Organizations</h3>
+              <p>Combine private workshops, tabletop drills, and capability assessments.</p>
+              <a class="link" href="services.html">Explore enterprise options</a>
+            </article>
+            <article class="summary-card">
+              <h3>Need guidance?</h3>
+              <p>Talk with Cyber+ advisors about the best format for your cohort or thesis project.</p>
+              <a class="link" href="contact.html">Book a call</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt reveal graphic" aria-label="What to expect">
+        <div class="content">
+          <div class="callout-head">
+            <div>
+              <p class="eyebrow">Inside each cohort</p>
+              <h2>A blend of hands-on labs, coaching, and exec-ready reporting.</h2>
+            </div>
+            <p class="muted">
+              Every week adds new tooling, lab time, and real deliverables so you can immediately plug
+              lessons into coursework or corporate security programs.
+            </p>
+          </div>
+          <div class="callout-grid">
+            <article class="callout">
+              <h3>Lab-first approach</h3>
+              <p>Spin up prebuilt environments that mirror hybrid enterprises and simulate live attacks.</p>
+              <a class="link" href="training.html">View the modules</a>
+            </article>
+            <article class="callout">
+              <h3>Mentored critiques</h3>
+              <p>Get annotated feedback on reports, dashboards, and architecture diagrams.</p>
+              <a class="link" href="about.html">Meet the instructors</a>
+            </article>
+            <article class="callout">
+              <h3>Executive fluency</h3>
+              <p>Practice translating incidents into board-level briefings and stakeholder plans.</p>
+              <a class="link" href="services.html">See enterprise tracks</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" aria-label="Quick links">
+        <div class="content">
+          <h2>Ready to dive deeper?</h2>
+          <p class="muted">Choose a path below or jump right to the contact page to design a custom rollout.</p>
+          <div class="cta-row">
+            <a class="button" href="services.html">Explore enterprise services</a>
+            <a class="button secondary" href="contact.html">Talk to Cyber+</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="content">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="brand">Cyber+</div>
+            <p class="muted">
+              Practical cybersecurity training for students, professionals, and organizations that need resilient defenses.
+            </p>
+          </div>
+          <div class="footer-links" aria-label="Footer navigation">
+            <a href="training.html">Courses</a>
+            <a href="#top">Back to top</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <small>© <span id="year"></span> Cyber+ Training · All rights reserved</small>
+          <small>Built for the College Web Authoring assignment</small>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Keep the year current
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
+
+
+
+
+
+

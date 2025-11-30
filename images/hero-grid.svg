@@ -1,0 +1,50 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="heroBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#04070f"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#22d3ee" stop-opacity="0.25"/>
+      <stop offset="60%" stop-color="#60a5fa" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#60a5fa" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="pulse" cx="0.65" cy="0.2" r="0.5">
+      <stop offset="0%" stop-color="#93c5fd" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#93c5fd" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#60a5fa" stop-opacity="0.15"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#heroBg)"/>
+
+  <g opacity="0.35">
+    <path d="M0 720 Q300 640 480 700 T960 660 T1600 720" fill="none" stroke="url(#sweep)" stroke-width="4"/>
+    <path d="M-40 580 Q260 540 520 600 T1120 560 T1640 620" fill="none" stroke="url(#sweep)" stroke-width="3"/>
+  </g>
+
+  <g opacity="0.45">
+    <circle cx="1240" cy="140" r="420" fill="url(#pulse)"/>
+    <circle cx="220" cy="720" r="360" fill="url(#pulse)" opacity="0.6"/>
+  </g>
+
+  <g opacity="0.7">
+    <circle cx="820" cy="360" r="220" fill="none" stroke="url(#ring)" stroke-width="2"/>
+    <circle cx="820" cy="360" r="320" fill="none" stroke="url(#ring)" stroke-width="2" stroke-dasharray="12 18"/>
+    <circle cx="820" cy="360" r="430" fill="none" stroke="url(#ring)" stroke-width="1" stroke-dasharray="6 12" opacity="0.6"/>
+    <path d="M540 460 Q820 260 1080 420" fill="none" stroke="url(#ring)" stroke-width="2" stroke-linecap="round"/>
+    <path d="M540 300 Q730 380 960 260" fill="none" stroke="url(#ring)" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  </g>
+
+  <g fill="#22d3ee" fill-opacity="0.55">
+    <circle cx="540" cy="460" r="6"/>
+    <circle cx="960" cy="260" r="6"/>
+    <circle cx="1080" cy="420" r="6"/>
+    <circle cx="720" cy="380" r="4" fill-opacity="0.4"/>
+  </g>
+</svg>
+
