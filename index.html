@@ -9,15 +9,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/stylesheet.css" />
     <script>
+      // AI for this reveal helper; these comments are me showing I get what it does now.
       document.addEventListener('DOMContentLoaded', function () {
+        // AI told me to cache every element that needs the reveal animation.
         var elements = Array.prototype.slice.call(document.querySelectorAll('.reveal, .reveal-stagger'));
         function onScroll() {
+          // Grab the viewport height once so I can compare element positions.
           var vh = window.innerHeight || document.documentElement.clientHeight;
           for (var i = 0; i < elements.length; i++) {
             var el = elements[i];
-            var rect = el.getBoundingClientRect();
-            var fullyAbove = rect.bottom < -40;
-            var visible = rect.top <= vh * 0.85 && rect.bottom >= vh * 0.05;
+            var rect = el.getBoundingClientRect(); // This gives me the element's box relative to the viewport.
+            var fullyAbove = rect.bottom < -40; // When it's way above the screen I mark it as "passed".
+            var visible = rect.top <= vh * 0.85 && rect.bottom >= vh * 0.05; // This range keeps the fade nice and early.
 
             if (visible) {
               el.classList.add('in-view');
@@ -31,17 +34,17 @@
             }
           }
         }
-        onScroll();
-        window.addEventListener('scroll', onScroll, { passive: true });
-        window.addEventListener('resize', onScroll);
+        onScroll(); // Run once so things already in view show up.
+        window.addEventListener('scroll', onScroll, { passive: true }); // Passive keeps scrolling smooth 
+        window.addEventListener('resize', onScroll); // Re-evaluate if someone rotates their phone.
       });
     </script>
   </head>
   <body id="top">
     <header class="site-header glow">
-      <div class="brand">
+      <a class="brand" href="index.html">
         <img src="images/Cyber+logo_transparent.png" alt="Cyber+ logo" class="brand-mark" />
-      </div>
+      </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
         <span class="nav-toggle-bar"></span>
       </button>
@@ -60,7 +63,7 @@
           <h1>Cybersecurity Training That Works</h1>
           <p>
             Cyber+ delivers practical cyber defense education for individuals, teams, and whole
-            organizations that need to outpace modern threats.
+            organizations that need defend against modern threats.
           </p>
           <a class="button" href="about.html">Explore the mission</a>
         </div>
@@ -161,10 +164,11 @@
     </footer>
 
     <script>
+      // AI walked me through this mobile nav logic since I wasn't sure how to wire it up; notes below are me explaining it back.
       (function () {
         var yearEl = document.getElementById('year');
         if (yearEl) {
-          yearEl.textContent = new Date().getFullYear();
+          yearEl.textContent = new Date().getFullYear(); // Saves me from manually updating the copyright.
         }
 
         var header = document.querySelector('.site-header');
@@ -172,37 +176,31 @@
         var nav = document.getElementById('primary-nav');
 
         if (!header || !toggle || !nav) {
-          return;
+          return; // Bail out if something is missing (AI told me to guard against nulls).
         }
 
         function setNavOpen(open) {
-          header.classList.toggle('nav-open', open);
-          document.body.classList.toggle('nav-open', open);
-          toggle.setAttribute('aria-expanded', open);
+          header.classList.toggle('nav-open', open); // Adds the class the CSS uses to show the panel.
+          document.body.classList.toggle('nav-open', open); // Locks body scroll when the menu is open.
+          toggle.setAttribute('aria-expanded', open); // Keeps screen readers in sync.
         }
 
         toggle.addEventListener('click', function () {
-          setNavOpen(!header.classList.contains('nav-open'));
+          setNavOpen(!header.classList.contains('nav-open')); // Clicking the burger flips the state.
         });
 
         nav.addEventListener('click', function (event) {
           if (event.target.closest('a') && window.matchMedia('(max-width: 720px)').matches) {
-            setNavOpen(false);
+            setNavOpen(false); // Tapping any link on mobile should close the drawer.
           }
         });
 
         window.addEventListener('resize', function () {
           if (!window.matchMedia('(max-width: 720px)').matches) {
-            setNavOpen(false);
+            setNavOpen(false); // If you grow the screen, force the mobile drawer closed.
           }
         });
       })();
     </script>
   </body>
 </html>
-
-
-
-
-
-

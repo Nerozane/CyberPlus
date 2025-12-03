@@ -9,12 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/stylesheet.css" />
     <script>
+      // AI helped me make this reveal script, and I'm explaining the steps to prove I get it.
       document.addEventListener('DOMContentLoaded', function () {
-        var elements = Array.prototype.slice.call(document.querySelectorAll('.reveal, .reveal-stagger'));
+        var elements = Array.prototype.slice.call(document.querySelectorAll('.reveal, .reveal-stagger')); // all animated sections
         function onScroll() {
           var vh = window.innerHeight || document.documentElement.clientHeight;
           elements.forEach(function (el) {
-            var rect = el.getBoundingClientRect();
+            var rect = el.getBoundingClientRect(); // relative position box
             var fullyAbove = rect.bottom < -40;
             var visible = rect.top <= vh * 0.85 && rect.bottom >= vh * 0.05;
             if (visible) {
@@ -29,7 +30,7 @@
             }
           });
         }
-        onScroll();
+        onScroll(); // kick things off
         window.addEventListener('scroll', onScroll, { passive: true });
         window.addEventListener('resize', onScroll);
       });
@@ -37,9 +38,9 @@
   </head>
   <body id="top">
     <header class="site-header glow">
-      <div class="brand">
+      <a class="brand" href="index.html">
         <img src="images/Cyber+logo_transparent.png" alt="Cyber+ logo" class="brand-mark" />
-      </div>
+      </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
         <span class="nav-toggle-bar"></span>
       </button>
@@ -169,10 +170,11 @@
     </footer>
 
     <script>
+      //AI walked me through this nav toggle.
       (function () {
         var yearEl = document.getElementById('year');
         if (yearEl) {
-          yearEl.textContent = new Date().getFullYear();
+          yearEl.textContent = new Date().getFullYear(); // drop in current year automatically
         }
 
         var header = document.querySelector('.site-header');
@@ -180,7 +182,7 @@
         var nav = document.getElementById('primary-nav');
 
         if (!header || !toggle || !nav) {
-          return;
+          return; // safety exit
         }
 
         function setNavOpen(open) {

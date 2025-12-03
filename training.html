@@ -10,12 +10,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/stylesheet.css" />
     <script>
+      // CS student note: AI explained this reveal helper to me, so I'm writing down the steps it taught.
       document.addEventListener('DOMContentLoaded', function () {
-        var elements = Array.prototype.slice.call(document.querySelectorAll('.reveal, .reveal-stagger'));
+        var elements = Array.prototype.slice.call(document.querySelectorAll('.reveal, .reveal-stagger')); // grab animated blocks
         function onScroll() {
-          var vh = window.innerHeight || document.documentElement.clientHeight;
+          var vh = window.innerHeight || document.documentElement.clientHeight; // viewport height cache
           elements.forEach(function (el) {
-            var rect = el.getBoundingClientRect();
+            var rect = el.getBoundingClientRect(); // element position relative to viewport
             var fullyAbove = rect.bottom < -40;
             var visible = rect.top <= vh * 0.85 && rect.bottom >= vh * 0.05;
             if (visible) {
@@ -30,17 +31,17 @@
             }
           });
         }
-        onScroll();
-        window.addEventListener('scroll', onScroll, { passive: true });
-        window.addEventListener('resize', onScroll);
+        onScroll(); // show anything already in frame
+        window.addEventListener('scroll', onScroll, { passive: true }); // update as we scroll
+        window.addEventListener('resize', onScroll); // keep things in sync on resize
       });
     </script>
   </head>
   <body id="top">
     <header class="site-header glow">
-      <div class="brand">
+      <a class="brand" href="index.html">
         <img src="images/Cyber+logo_transparent.png" alt="Cyber+ logo" class="brand-mark" />
-      </div>
+      </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
         <span class="nav-toggle-bar"></span>
       </button>
@@ -269,10 +270,11 @@
     </footer>
 
     <script>
+      // CS student note: AI guided me through this nav toggle; documenting the logic helps me remember.
       (function () {
         var yearEl = document.getElementById('year');
         if (yearEl) {
-          yearEl.textContent = new Date().getFullYear();
+          yearEl.textContent = new Date().getFullYear(); // auto-inserts the current year
         }
 
         var header = document.querySelector('.site-header');
@@ -280,28 +282,28 @@
         var nav = document.getElementById('primary-nav');
 
         if (!header || !toggle || !nav) {
-          return;
+          return; // nothing to do if any part is missing
         }
 
         function setNavOpen(open) {
-          header.classList.toggle('nav-open', open);
-          document.body.classList.toggle('nav-open', open);
-          toggle.setAttribute('aria-expanded', open);
+          header.classList.toggle('nav-open', open); // controls the drawer visibility
+          document.body.classList.toggle('nav-open', open); // body gets locked when open
+          toggle.setAttribute('aria-expanded', open); // accessibility win
         }
 
         toggle.addEventListener('click', function () {
-          setNavOpen(!header.classList.contains('nav-open'));
+          setNavOpen(!header.classList.contains('nav-open')); // burger toggles the drawer
         });
 
         nav.addEventListener('click', function (event) {
           if (event.target.closest('a') && window.matchMedia('(max-width: 720px)').matches) {
-            setNavOpen(false);
+            setNavOpen(false); // tap a link on mobile = close the drawer
           }
         });
 
         window.addEventListener('resize', function () {
           if (!window.matchMedia('(max-width: 720px)').matches) {
-            setNavOpen(false);
+            setNavOpen(false); // ensures desktop layout isn't stuck in mobile state
           }
         });
       })();

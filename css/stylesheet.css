@@ -436,6 +436,23 @@ body.nav-open {
   border-bottom: none;
 }
 
+@media (max-width: 640px) {
+  .services-table {
+    min-width: 0;
+    table-layout: fixed;
+    font-size: 0.9rem;
+  }
+  .services-table th,
+  .services-table td {
+    padding: 10px 8px;
+    word-break: break-word;
+  }
+  .services-table th:first-child,
+  .services-table td:first-child {
+    width: 40%;
+  }
+}
+
 .resource-grid {
   margin-top: 18px;
   display: grid;
@@ -1300,5 +1317,3 @@ textarea:focus {
   filter: blur(12px);
   pointer-events: none;
 }
-
-/* Optional: subtle glow on link hover to match theme */

@@ -9,12 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/stylesheet.css" />
     <script>
+      // AI broughtthrough this reveal helper.
       document.addEventListener('DOMContentLoaded', function () {
-        var elements = Array.prototype.slice.call(document.querySelectorAll('.reveal, .reveal-stagger'));
+        var elements = Array.prototype.slice.call(document.querySelectorAll('.reveal, .reveal-stagger')); // grab everything that needs animation
         function onScroll() {
-          var vh = window.innerHeight || document.documentElement.clientHeight;
+          var vh = window.innerHeight || document.documentElement.clientHeight; // reuse viewport height
           elements.forEach(function (el) {
-            var rect = el.getBoundingClientRect();
+            var rect = el.getBoundingClientRect(); // figure out where the element currently sits
             var fullyAbove = rect.bottom < -40;
             var visible = rect.top <= vh * 0.85 && rect.bottom >= vh * 0.05;
             if (visible) {
@@ -29,17 +30,17 @@
             }
           });
         }
-        onScroll();
-        window.addEventListener('scroll', onScroll, { passive: true });
-        window.addEventListener('resize', onScroll);
+        onScroll(); // run once for initial state
+        window.addEventListener('scroll', onScroll, { passive: true }); // keep updates smooth on scroll
+        window.addEventListener('resize', onScroll); // recalc when viewport changes
       });
     </script>
   </head>
   <body id="top">
     <header class="site-header glow">
-      <div class="brand">
+      <a class="brand" href="index.html">
         <img src="images/Cyber+logo_transparent.png" alt="Cyber+ logo" class="brand-mark" />
-      </div>
+      </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
         <span class="nav-toggle-bar"></span>
       </button>
@@ -189,10 +190,11 @@
     </footer>
 
     <script>
+      // AI helped wire up this nav toggle; comments show the pieces it taught me.
       (function () {
         var yearEl = document.getElementById('year');
         if (yearEl) {
-          yearEl.textContent = new Date().getFullYear();
+          yearEl.textContent = new Date().getFullYear(); // auto-updates the year
         }
 
         var header = document.querySelector('.site-header');
@@ -200,28 +202,28 @@
         var nav = document.getElementById('primary-nav');
 
         if (!header || !toggle || !nav) {
-          return;
+          return; // guard so we don't crash if something is missing
         }
 
         function setNavOpen(open) {
-          header.classList.toggle('nav-open', open);
-          document.body.classList.toggle('nav-open', open);
-          toggle.setAttribute('aria-expanded', open);
+          header.classList.toggle('nav-open', open); // tells CSS to show the drawer
+          document.body.classList.toggle('nav-open', open); // stops body scroll when open
+          toggle.setAttribute('aria-expanded', open); // accessible state for screen readers
         }
 
         toggle.addEventListener('click', function () {
-          setNavOpen(!header.classList.contains('nav-open'));
+          setNavOpen(!header.classList.contains('nav-open')); // toggles open/closed
         });
 
         nav.addEventListener('click', function (event) {
           if (event.target.closest('a') && window.matchMedia('(max-width: 720px)').matches) {
-            setNavOpen(false);
+            setNavOpen(false); // close the menu after tapping a link on mobile
           }
         });
 
         window.addEventListener('resize', function () {
           if (!window.matchMedia('(max-width: 720px)').matches) {
-            setNavOpen(false);
+            setNavOpen(false); // make sure desktop layout doesn't leave the drawer open
           }
         });
       })();
